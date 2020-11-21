@@ -1,6 +1,9 @@
 package com.demoproject.SampleCRM.Baseclass;
 
 import org.testng.annotations.Test;
+
+import com.demoproject.SampleCRM.Utilities.ExcelAPI;
+
 import org.testng.annotations.BeforeMethod;
 
 import java.io.FileInputStream;
@@ -17,9 +20,10 @@ public class BaseTest {
 	public FileInputStream fi;
 	public Properties mainprop;
 	public Properties childprop;
+	public ExcelAPI xls;
 	
 	
-	public void init() throws IOException {
+	public void init() throws Exception {
 		
 		fi=new FileInputStream(projectpath+"//src//test//resources//Environment.properties");
 		mainprop=new Properties();
@@ -33,13 +37,14 @@ public class BaseTest {
 		String valu = childprop.getProperty("zohourl");
 		System.out.println(valu);
 		
+		xls=new ExcelAPI("E:\\Users\\Nag\\Aug-2020-WorkingDirectory\\SampleCRM\\src\\test\\resources\\SuiteA.xlsx");
 		
 	}
 	
 	
 	
   @BeforeMethod
-  public void beforeMethod() throws IOException 
+  public void beforeMethod() throws Exception 
   {
 	  init();
 	  System.out.println("i am beforemethod.......");

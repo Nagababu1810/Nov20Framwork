@@ -1,14 +1,13 @@
 package com.demoproject.SampleCRM.Baseclass;
 
-import org.testng.annotations.Test;
+
 
 import com.demoproject.SampleCRM.Utilities.ExcelAPI;
 
 import org.testng.annotations.BeforeMethod;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+
 import java.util.Properties;
 
 import org.testng.annotations.AfterMethod;
@@ -37,7 +36,15 @@ public class BaseTest {
 		String valu = childprop.getProperty("zohourl");
 		System.out.println(valu);
 		
-		xls=new ExcelAPI("E:\\Users\\Nag\\Aug-2020-WorkingDirectory\\SampleCRM\\src\\test\\resources\\SuiteA.xlsx");
+		
+		String[] pack = this.getClass().getPackage().getName().split("\\.");
+		String suiteName = pack[pack.length-1];
+		System.out.println(suiteName);
+		
+		xls=new ExcelAPI(projectpath+"\\src\\test\\resources\\"+suiteName+".xlsx");
+		
+		String TestName = this.getClass().getSimpleName();
+		System.out.println(TestName);
 		
 	}
 	

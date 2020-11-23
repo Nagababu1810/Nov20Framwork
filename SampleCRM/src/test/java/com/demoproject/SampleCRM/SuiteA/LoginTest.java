@@ -9,7 +9,7 @@ public class LoginTest extends BaseTest{
   @Test
   public void f() {
 	  
-	  System.out.println("i am f Testmethod.......");
+	  System.out.println("i am f Testmethod.......from LoginTest");
   }
 
 

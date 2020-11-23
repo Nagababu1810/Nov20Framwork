@@ -9,7 +9,7 @@ public class TestA extends BaseTest{
   @Test
   public void f() {
 	  
-	  
+	  System.out.println("This is f test ....from TestA");
   }
 
 

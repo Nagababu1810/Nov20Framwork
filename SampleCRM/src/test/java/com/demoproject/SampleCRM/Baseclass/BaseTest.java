@@ -41,7 +41,9 @@ public class BaseTest {
 		String suiteName = pack[pack.length-1];
 		System.out.println(suiteName);
 		
-		xls=new ExcelAPI(projectpath+"\\src\\test\\resources\\"+suiteName+".xlsx");
+		//xls=new ExcelAPI(projectpath+"\\src\\test\\resources\\"+suiteName+".xlsx");
+		//every change suitname ramdomly
+		xls=new ExcelAPI(childprop.getProperty(suiteName+".xls"));
 		
 		String TestName = this.getClass().getSimpleName();
 		System.out.println(TestName);
